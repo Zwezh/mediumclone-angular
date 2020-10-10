@@ -6,25 +6,32 @@
         <p class="text-xs-center">
           <a [routerLink]="['/login']">Have an account?</a>
         </p>
-        Backend errors are here
-        <form [formGroup]="form" (ngSubmit)="onSubmit()" >
+        <ng-container *ngIf="backendErrors$ | async">
+          <mc-backend-error-messages [backendErrors]="backendErrors$ | async"></mc-backend-error-messages>
+        </ng-container>
+        <form [formGroup]="form"
+              (ngSubmit)="onSubmit()">
           <fieldset>
             <fieldset class="form-group">
               <input type="text"
-                     class="form-control form-control-lg" formControlName="username"
+                     class="form-control form-control-lg"
+                     formControlName="username"
                      placeholder="Username" />
             </fieldset>
             <fieldset class="form-group">
               <input type="text"
-                     class="form-control form-control-lg" formControlName="email"
+                     class="form-control form-control-lg"
+                     formControlName="email"
                      placeholder="Email" />
             </fieldset>
             <fieldset class="form-group">
               <input type="password"
-                     class="form-control form-control-lg" formControlName="password"
+                     class="form-control form-control-lg"
+                     formControlName="password"
                      placeholder="Password" />
             </fieldset>
             <button class="btn btn-lg btn-primary pull-xs-right"
+                    [disabled]="isSubmitting$ | async"
                     type="submit">
               Sign Up
             </button>

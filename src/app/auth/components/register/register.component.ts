@@ -1,7 +1,11 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Store } from '@ngrx/store';
-import { registerAction } from '../../store';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { IBackendErrors } from 'src/app/shared/types';
+import { AuthService } from '../../services';
+import { isSubmittingSelector, registerAction, validationErrorsSelector } from '../../store';
+import { IRegisterRequest } from '../../types';
 
 @Component({
   selector: 'mc-register',
@@ -12,18 +16,25 @@ import { registerAction } from '../../store';
 export class RegisterComponent implements OnInit {
 
   form: FormGroup;
+  isSubmitting$: Observable<boolean>;
+  backendErrors$: Observable<IBackendErrors | null>;
 
   constructor(
     private fb: FormBuilder,
-    private store: Store) {
+    private store: Store,
+    private authService: AuthService) {
 
   }
   ngOnInit(): void {
     this.initializeForm();
+    this.initializeValues()
   }
 
   onSubmit(): void {
-    this.store.dispatch(registerAction(this.form.value));
+    const request: IRegisterRequest = {
+      user: this.form.value
+    };
+    this.store.dispatch(registerAction({ request }));
   }
 
   private initializeForm(): void {
@@ -32,5 +43,10 @@ export class RegisterComponent implements OnInit {
       email: '',
       password: ''
     });
+  }
+
+  private initializeValues(): void {
+    this.isSubmitting$ = this.store.pipe(select(isSubmittingSelector));
+    this.backendErrors$ = this.store.pipe(select(validationErrorsSelector));
   }
 }
