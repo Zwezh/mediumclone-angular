@@ -11,6 +11,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { TopBarModule } from './shared/modules';
 import { AuthInterceptor, PersistanceService } from './shared/services';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { GlobalFeedModule } from './global-feed/global-feed.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     AppRoutingModule,
     AuthModule,
     TopBarModule,
+    GlobalFeedModule,
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
