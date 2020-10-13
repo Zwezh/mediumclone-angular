@@ -7,10 +7,12 @@ import { EffectsModule } from '@ngrx/effects';
 import { GetFeedEffect } from './store';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './store';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   imports: [
+    RouterModule,
     CommonModule,
     HttpClientModule,
     EffectsModule.forFeature([GetFeedEffect]),
