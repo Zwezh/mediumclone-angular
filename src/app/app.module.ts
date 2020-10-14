@@ -14,9 +14,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { GlobalFeedModule } from './global-feed/global-feed.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -40,4 +38,4 @@ import { GlobalFeedModule } from './global-feed/global-feed.module';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

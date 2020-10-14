@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  limit: 10,
   apiUrl: 'https://conduit.productionready.io/api'
 };
 
