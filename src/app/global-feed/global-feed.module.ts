@@ -2,7 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GlobalFeedComponent } from './components';
 import { RouterModule, Routes } from '@angular/router';
-import { BannerModule, FeedModule } from '../shared/modules';
+import {
+  BannerModule,
+  FeedModule,
+  FeedTogglerModule,
+  PopularTagsModule
+} from '../shared/modules';
 
 const routes: Routes = [
   {
@@ -16,8 +21,10 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     FeedModule,
-    BannerModule
-    ],
+    BannerModule,
+    PopularTagsModule,
+    FeedTogglerModule
+  ],
   declarations: [GlobalFeedComponent]
 })
-export class GlobalFeedModule { }
+export class GlobalFeedModule {}

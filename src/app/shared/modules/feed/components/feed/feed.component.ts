@@ -1,8 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
-import { parseUrl } from 'query-string';
-import { stringify } from 'querystring';
+import { parseUrl, stringify } from 'query-string';
 import { Observable, Subscription } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import {

@@ -1,0 +1,12 @@
+<div class="sidebar">
+  <p>
+    Popular tags
+  </p>
+  <ng-container *ngIf="isLoading$ | async">
+    <mc-loading></mc-loading>
+  </ng-container>
+  <ng-container *ngIf="error$ | async">
+    <mc-error-message [message]="error$ | async"></mc-error-message>
+  </ng-container>
+  <mc-tag-list [tags]="(popularTags$ | async)?.tags"></mc-tag-list>
+</div>

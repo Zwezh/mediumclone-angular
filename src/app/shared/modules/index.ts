@@ -4,3 +4,7 @@ export * from './feed/feed.module';
 export * from './banner/banner.module';
 export * from './error-message/error-message.module';
 export * from './pagination/pagination.module';
+export * from './tag-list/tag-list.module';
+export * from './loading/loading.module';
+export * from './popular-tags/popular-tags.module';
+export * from './feed-toggler/feed-toggler.module';

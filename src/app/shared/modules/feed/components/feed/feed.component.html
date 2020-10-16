@@ -25,7 +25,7 @@
        class="preview-link">
       <h1>{{article.title}}</h1>
       <p>{{article.description}}</p>
-      HERE IS LIST OF TAGS
+      <mc-tag-list [tags]="article?.tagList"></mc-tag-list>
     </a>
   </div>
   <mc-pagination [total]="(feed$ | async).articlesCount"

@@ -4,4 +4,3 @@ export interface IProfile {
   image: string;
   following: boolean;
 }
-
