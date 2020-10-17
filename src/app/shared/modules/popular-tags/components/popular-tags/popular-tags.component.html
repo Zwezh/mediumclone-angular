@@ -1,0 +1,16 @@
+<div class="sidebar">
+  <p>
+    Popular tags
+  </p>
+  <ng-container *ngIf="isLoading$ | async">
+    <mc-loading></mc-loading>
+  </ng-container>
+  <ng-container *ngIf="error$ | async">
+    <mc-error-message [message]="error$ | async"></mc-error-message>
+  </ng-container>
+  <div class="tag-list">
+    <ng-container *ngFor="let tag of popularTags$ | async">
+      <a class="tag-default tag-pill" [routerLink]="['/tag', tag]" routerLinkActive="router-link-active"  > {{tag}}</a>
+    </ng-container>
+  </div>
+</div>
