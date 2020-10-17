@@ -13,6 +13,8 @@ import { TopBarModule } from './shared/modules';
 import { AuthInterceptor, PersistanceService } from './shared/services';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { GlobalFeedModule } from './global-feed/global-feed.module';
+import { YourFeedModule } from './your-feed/your-feed.module';
+import { TagFeedModule } from './tag-feed/tag-feed.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +24,8 @@ import { GlobalFeedModule } from './global-feed/global-feed.module';
     AuthModule,
     TopBarModule,
     GlobalFeedModule,
+    YourFeedModule,
+    TagFeedModule,
     StoreModule.forRoot({ routerReducer }),
     StoreDevtoolsModule.instrument({
       maxAge: 25,

@@ -10,13 +10,17 @@
     <li class="nav-item">
       <a [routerLink]="['/']"
          class="nav-link"
-         routerLinkActive="active"> Global feed</a>
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{exact: true}"> Global feed</a>
     </li>
     <ng-container *ngIf="tagName">
       <li class="nav-item">
-        <a [routerLink]="['/tags', tagName]"
+        <a [routerLink]="['/tag', tagName]"
            class="nav-link"
-           routerLinkActive="active"> {{tagName}}</a>
+           routerLinkActive="active">
+          <i class="ion-pound"></i>
+          {{tagName}}
+        </a>
       </li>
     </ng-container>
   </ul>

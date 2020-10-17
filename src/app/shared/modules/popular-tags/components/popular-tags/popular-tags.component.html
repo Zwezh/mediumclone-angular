@@ -10,7 +10,7 @@
   </ng-container>
   <div class="tag-list">
     <ng-container *ngFor="let tag of popularTags$ | async">
-      <a class="tag-default tag-pill" [routerLink]="['/tags', tag]" routerLinkActive="router-link-active"  > {{tag}}</a>
+      <a class="tag-default tag-pill" [routerLink]="['/tag', tag]" routerLinkActive="router-link-active"  > {{tag}}</a>
     </ng-container>
   </div>
 </div>
