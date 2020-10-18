@@ -1,0 +1,39 @@
+<div class="banner">
+  <ng-container *ngIf="!!article">
+    <div class="container">
+      <h1>{{article.title}}</h1>
+      <div class="article-meta">
+        <a [routerLink]="['/profiles', article.author.username]">
+          <img [src]="article.author.image">
+        </a>
+        <div class="info">
+          <a [routerLink]="['/profiles', article.author.username]">
+            {{article.author.username}}
+          </a>
+          <span class="date">{{article.createdAt}}</span>
+        </div>
+        <span *ngIf="isAuthor">
+          <a [routerLink]="['/articles', article.slug, 'edit']"
+             class="btn btn-outline-secondary btn-sm">
+            <i class="ion-edit"></i>
+            Edit Article
+          </a>
+          <button class="btn btn-outline-danger btn-sm"
+                  (click)="onDelete()">Delete Article</button>
+        </span>
+      </div>
+    </div>
+  </ng-container>
+</div>
+<div class="container page">
+  <ng-container *ngIf="article">
+    <div class="row article-content">
+      <div class="col-xs-12">
+        <div class="">
+          <p>{{article.body}}</p>
+        </div>
+        <mc-tag-list [tags]="article.tagList"></mc-tag-list>
+      </div>
+    </div>
+  </ng-container>
+</div>

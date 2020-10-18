@@ -1,0 +1,14 @@
+<div class="article-page">
+  <div class="container page">
+    <ng-container *ngIf="isLoading$ | async">
+      <mc-loading></mc-loading>
+    </ng-container>
+    <ng-container *ngIf="error$ | async">
+      <mc-error-message [message]="error"></mc-error-message>
+    </ng-container>
+  </div>
+  <ng-container *ngIf="article$ | async">
+    <mc-article-content [article]="article$ | async"
+                        [isAuthor]="isAuthor$ | async"
+                        (delete)="onDelete()"></mc-article-content>
+  </ng-container>

@@ -1,5 +1,5 @@
-export * from './actions-types';
 export * from './actions';
-export * from './reducers';
 export * from './effects';
+export * from './action-types';
+export * from './reducers';
 export * from './selectors';
