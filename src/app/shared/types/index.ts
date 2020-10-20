@@ -4,3 +4,4 @@ export * from './backend-errors.interface';
 export * from './article.interface';
 export * from './profile.interface';
 export * from './popular-tag.type';
+export * from './article-input.interface';

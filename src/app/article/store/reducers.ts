@@ -2,9 +2,6 @@ import { routerNavigationAction } from '@ngrx/router-store';
 import { Action, createReducer, on } from '@ngrx/store';
 import { IArticleState } from '../types';
 import {
-  deleteArticleAction,
-  deleteArticleFailureAction,
-  deleteArticleSuccessAction,
   getArticleAction,
   getArticleFailureAction,
   getArticleSuccessAction
