@@ -8,7 +8,13 @@ import { reducers } from './store';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services';
 import { EffectsModule } from '@ngrx/effects';
-import { GetCurrentUserEffect, LoginEffect, RegisterEffect } from './store/effects';
+import {
+  GetCurrentUserEffect,
+  LoginEffect,
+  LogoutEffect,
+  RegisterEffect,
+  UpdateUserEffect
+} from './store/effects';
 import { BackendErrorMessagesModule } from '../shared/modules';
 import { PersistanceService } from '../shared/services';
 
@@ -30,16 +36,16 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     ReactiveFormsModule,
     StoreModule.forFeature('auth', reducers),
-    EffectsModule.forFeature([RegisterEffect, LoginEffect, GetCurrentUserEffect]),
+    EffectsModule.forFeature([
+      RegisterEffect,
+      LoginEffect,
+      LogoutEffect,
+      GetCurrentUserEffect,
+      UpdateUserEffect
+    ]),
     BackendErrorMessagesModule
   ],
-  declarations: [
-    RegisterComponent,
-    LoginComponent
-  ],
-  providers: [
-    PersistanceService,
-    AuthService
-  ]
+  declarations: [RegisterComponent, LoginComponent],
+  providers: [PersistanceService, AuthService]
 })
-export class AuthModule { }
+export class AuthModule {}

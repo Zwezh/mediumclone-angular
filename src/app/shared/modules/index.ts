@@ -8,3 +8,4 @@ export * from './tag-list/tag-list.module';
 export * from './loading/loading.module';
 export * from './popular-tags/popular-tags.module';
 export * from './feed-toggler/feed-toggler.module';
+export * from './favorites/favorites.module';

@@ -1,6 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { IBackendErrors, ICurrentUser } from 'src/app/shared/types';
-import { ILoginRequest } from '../../types';
+import { ICurrentUser } from 'src/app/shared/types';
 import { ActionTypes } from '../action-types';
 
 export const getCurrentUserAction = createAction(ActionTypes.GET_CURRENT_USER);
@@ -10,5 +9,6 @@ export const getCurrentUserSuccessAction = createAction(
   props<{ currentUser: ICurrentUser }>()
 );
 
-export const getCurrentUserFailueAction = createAction(ActionTypes.GET_CURRENT_USER_FAILURE);
-
+export const getCurrentUserFailueAction = createAction(
+  ActionTypes.GET_CURRENT_USER_FAILURE
+);

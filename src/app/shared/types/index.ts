@@ -5,3 +5,4 @@ export * from './article.interface';
 export * from './profile.interface';
 export * from './popular-tag.type';
 export * from './article-input.interface';
+export * from './current-user-input.interface';

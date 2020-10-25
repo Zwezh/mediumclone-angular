@@ -1,0 +1,7 @@
+<button (click)="onToggleLike()"
+        class="btn btn-sm"
+        [class.btn-primary]="isFavorite"
+        [class.btn-outline-primary]="!isFavorite">
+  <i class="ion-heart"></i>
+  <span>&nbsp; {{count}}</span>
+</button>
